@@ -14619,7 +14619,7 @@ The <a href="https://chronicdata.cdc.gov/Healthy-Aging/Alzheimer-s-Disease-and-H
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[358]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14704,7 +14704,7 @@ dtype: object
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[358]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[70]:</div>
 
 
 
@@ -14807,7 +14807,7 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[359]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">grpby</span><span class="p">,</span> <span class="n">cmpby</span><span class="p">):</span>
@@ -14830,12 +14830,12 @@ dtype: object
     <span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==============================================================================&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_questions</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">):</span>
-    <span class="n">series</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
-    <span class="n">indicies</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">index</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indicies</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">BOLD</span> <span class="o">+</span> <span class="n">var1</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">END</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">BOLD</span> <span class="o">+</span> <span class="n">var2</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">END</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">print_questions</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">by_qs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Question&quot;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">by_qs</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">BOLD</span> <span class="o">+</span> <span class="s2">&quot;Question </span><span class="si">%i</span><span class="s2">: &quot;</span> <span class="o">%</span> <span class="n">i</span> <span class="o">+</span> <span class="n">END</span> <span class="o">+</span> <span class="n">q</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
      </div>
@@ -14848,7 +14848,7 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[360]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">comp_vars</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;Class&quot;</span><span class="p">,</span> <span class="s2">&quot;ClassID&quot;</span><span class="p">)</span>
@@ -14934,7 +14934,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[361]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ClassID&quot;</span><span class="p">,</span> <span class="s2">&quot;TopicID&quot;</span><span class="p">,</span> <span class="s2">&quot;QuestionID&quot;</span><span class="p">,</span> <span class="s2">&quot;LocationID&quot;</span><span class="p">,</span> <span class="s2">&quot;DataValueTypeID&quot;</span><span class="p">,</span> <span class="s2">&quot;StratificationCategoryID1&quot;</span><span class="p">,</span> <span class="s2">&quot;StratificationID1&quot;</span><span class="p">,</span>
@@ -14959,7 +14959,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[362]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;StratificationCategory1&quot;</span><span class="p">:</span><span class="s2">&quot;StratCat1&quot;</span><span class="p">,</span> <span class="s2">&quot;Stratification1&quot;</span><span class="p">:</span><span class="s2">&quot;StratValues1&quot;</span><span class="p">,</span> <span class="s2">&quot;StratificationCategory2&quot;</span><span class="p">:</span><span class="s2">&quot;StratCat2&quot;</span><span class="p">,</span>
@@ -15000,7 +15000,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[362]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[74]:</div>
 
 
 
@@ -15118,15 +15118,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Examining-the-data">Examining the data<a class="anchor-link" href="#Examining-the-data">&#182;</a></h2><p>It seems we have question and stratifications {...}</p>
-
-</div>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now we take a look at our options; namely, the questions being asked. We see three identifier columns. Grouping by the first two, (Class and Topic):</p>
+<p>Take a look at years</p>
 
 </div>
 </div>
@@ -15135,7 +15127,244 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[336]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[96]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">datacopy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;YearEnd&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;YearStart&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;YearStart&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2015</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;YearEnd&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2020</span><span class="p">))]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[96]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class</th>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>LowConf</th>
+      <th>HighConf</th>
+      <th>Notes</th>
+      <th>StratCat1</th>
+      <th>StratValues1</th>
+      <th>StratCat2</th>
+      <th>StratValues2</th>
+      <th>YearStart</th>
+      <th>YearEnd</th>
+      <th>StateAbbr</th>
+      <th>State</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Time periods are only single years</p>
+
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[97]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">datacopy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;TimePeriod&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;TimePeriod&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="s2">&quot;Overall&quot;</span> <span class="k">if</span> <span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;YearStart&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2015</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;YearEnd&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">))</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;YearStart&quot;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">42</span><span class="p">:</span><span class="mi">44</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;YearStart&quot;</span><span class="p">,</span> <span class="s2">&quot;YearEnd&quot;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">temp</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[97]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class</th>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>LowConf</th>
+      <th>HighConf</th>
+      <th>Notes</th>
+      <th>StratCat1</th>
+      <th>StratValues1</th>
+      <th>StratCat2</th>
+      <th>StratValues2</th>
+      <th>YearStart</th>
+      <th>YearEnd</th>
+      <th>TimePeriod</th>
+      <th>StateAbbr</th>
+      <th>State</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>42</th>
+      <td>Screenings and Vaccines</td>
+      <td>Pap test within past 3 years</td>
+      <td>Percentage of older adult women with an intact...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Race/Ethnicity</td>
+      <td>Hispanic</td>
+      <td>2016</td>
+      <td>2016</td>
+      <td>2016</td>
+      <td>AL</td>
+      <td>Alabama</td>
+      <td>POINT (-86.63186076 32.84057112)</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Caregiving</td>
+      <td>Duration of caregiving among older adults</td>
+      <td>Percentage of older adults who provided care t...</td>
+      <td>Percentage</td>
+      <td>65.0</td>
+      <td>56.8</td>
+      <td>72.5</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Gender</td>
+      <td>Male</td>
+      <td>2015</td>
+      <td>2020</td>
+      <td>Overall</td>
+      <td>AZ</td>
+      <td>Arizona</td>
+      <td>POINT (-111.7638113 34.86597028)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Examining-the-data">Examining the data<a class="anchor-link" href="#Examining-the-data">&#182;</a></h2><p>It seems we have question and stratifications {...}</p>
+
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Questions Avaliable</strong>
+<br>
+Now we take a look at our options; namely, the questions being asked. We see three identifier columns. Grouping by the first two, (Class and Topic):</p>
+
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[99]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">group</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;Class&quot;</span><span class="p">,</span> <span class="s2">&quot;Topic&quot;</span><span class="p">)</span>
@@ -15156,7 +15385,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[336]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[99]:</div>
 
 
 
@@ -15376,7 +15605,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[338]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[100]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">,</span> <span class="s2">&quot;Topic&quot;</span><span class="p">,</span> <span class="s2">&quot;Question&quot;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -15396,23 +15625,15 @@ Smoking and Alcohol Use             C04        16599
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's take a look at the 'Overall Health' dataset. Specifically, the topics and questions avaliable to us:</p>
-
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[341]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">group</span><span class="p">(</span><span class="n">health</span><span class="p">,</span> <span class="s2">&quot;Topic&quot;</span><span class="p">,</span> <span class="s2">&quot;Question&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comp_vars</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;Class&quot;</span><span class="p">,</span> <span class="s2">&quot;TimePeriod&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15430,7 +15651,129 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[341]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Value counts for <span class="ansi-bold">Class</span>
+==============================================================================
+Overall Health                         71694
+Screenings and Vaccines                46867
+Nutrition/Physical Activity/Obesity    24851
+Cognitive Decline                      19180
+Caregiving                             18671
+Mental Health                          16600
+Smoking and Alcohol Use                16599
+Name: Class, dtype: Int64
+==============================================================================
+
+Value counts for <span class="ansi-bold">TimePeriod</span>
+==============================================================================
+2020       36006
+2015       35020
+2019       34354
+2016       34145
+2017       33429
+2018       30548
+Overall    10960
+Name: TimePeriod, dtype: int64
+==============================================================================
+
+Comparing <span class="ansi-bold">Class</span> and <span class="ansi-bold">TimePeriod</span>
+If there isn&#39;t a one to one relationship between each <span class="ansi-bold">Class</span> and <span class="ansi-bold">TimePeriod</span>, something is fishy
+==============================================================================
+                                                TimePeriod
+Class                               TimePeriod            
+Caregiving                          Overall           5867
+                                    2015              3373
+                                    2016              2974
+                                    2017              2016
+                                    2019              1743
+                                    2020              1515
+                                    2018              1183
+Cognitive Decline                   Overall           5093
+                                    2015              3608
+                                    2019              3383
+                                    2020              2467
+                                    2016              2361
+                                    2017              1357
+                                    2018               911
+Mental Health                       2016              2812
+                                    2017              2770
+                                    2020              2768
+                                    2015              2766
+                                    2018              2766
+                                    2019              2718
+Nutrition/Physical Activity/Obesity 2017              5539
+                                    2015              5531
+                                    2019              5435
+                                    2016              2812
+                                    2020              2768
+                                    2018              2766
+Overall Health                      2020             13806
+                                    2017             12416
+                                    2019             12185
+                                    2016             11236
+                                    2018             11051
+                                    2015             11000
+Screenings and Vaccines             2020              9914
+                                    2016              9138
+                                    2018              9105
+                                    2017              6562
+                                    2019              6172
+                                    2015              5976
+Smoking and Alcohol Use             2016              2812
+                                    2017              2769
+                                    2020              2768
+                                    2015              2766
+                                    2018              2766
+                                    2019              2718
+==============================================================================
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Looks like there are only 2015-2020 accumulated entires for 'Cognitive Decline' questions</p>
+<p>Let's take a look at that dataset with only the accumulated entires. Specifically, the topics and questions avaliable to us:</p>
+
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[107]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cognition_entire</span> <span class="o">=</span> <span class="n">cognition</span><span class="p">[</span><span class="n">cognition</span><span class="p">[</span><span class="s2">&quot;TimePeriod&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Overall&quot;</span><span class="p">]</span>
+<span class="n">group</span><span class="p">(</span><span class="n">cognition_entire</span><span class="p">,</span> <span class="s2">&quot;Topic&quot;</span><span class="p">,</span> <span class="s2">&quot;Question&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[107]:</div>
 
 
 
@@ -15464,64 +15807,24 @@ Smoking and Alcohol Use             C04        16599
   </thead>
   <tbody>
     <tr>
-      <th>Arthritis among older adults</th>
-      <th>Percentage of older adults ever told they have...</th>
-      <td>5511</td>
+      <th>Functional difficulties associated with subjec...</th>
+      <th>Percentage of older adults who reported subjec...</th>
+      <td>1243</td>
     </tr>
     <tr>
-      <th>Disability status, including sensory or mobili...</th>
-      <th>Percentage of older adults who report having a...</th>
-      <td>6917</td>
+      <th>Need assistance with day-to-day activities bec...</th>
+      <th>Percentage of older adults who reported that a...</th>
+      <td>1244</td>
     </tr>
     <tr>
-      <th>Fair or poor health among older adults with ar...</th>
-      <th>Fair or poor health among older adults with do...</th>
-      <td>5447</td>
+      <th>Subjective cognitive decline or memory loss am...</th>
+      <th>Percentage of older adults who reported subjec...</th>
+      <td>1361</td>
     </tr>
     <tr>
-      <th>Fall with injury within last year</th>
-      <th>Percentage of older adults who have fallen and...</th>
-      <td>4173</td>
-    </tr>
-    <tr>
-      <th>Oral health:  tooth retention</th>
-      <th>Percentage of older adults who report having l...</th>
-      <td>4172</td>
-    </tr>
-    <tr>
-      <th>Physically unhealthy days (mean number of days)</th>
-      <th>Physically unhealthy days (mean number of days...</th>
-      <td>8300</td>
-    </tr>
-    <tr>
-      <th>Prevalence of sufficient sleep</th>
-      <th>Percentage of older adults getting sufficient ...</th>
-      <td>4171</td>
-    </tr>
-    <tr>
-      <th>Recent activity limitations in past month</th>
-      <th>Mean number of days with activity limitations ...</th>
-      <td>8233</td>
-    </tr>
-    <tr>
-      <th>Self-rated health (fair to poor health)</th>
-      <th>Percentage of older adults who self-reported t...</th>
-      <td>8299</td>
-    </tr>
-    <tr>
-      <th>Self-rated health (good to excellent health)</th>
-      <th>Percentage of older adults who self-reported t...</th>
-      <td>8299</td>
-    </tr>
-    <tr>
-      <th>Severe joint pain among older adults with arth...</th>
-      <th>Severe joint pain due to arthritis among older...</th>
-      <td>4064</td>
-    </tr>
-    <tr>
-      <th>Taking medication for high blood pressure</th>
-      <th>Percentage of older adults who have been told ...</th>
-      <td>4108</td>
+      <th>Talked with health care professional about sub...</th>
+      <th>Percentage of older adults with subjective cog...</th>
+      <td>1245</td>
     </tr>
   </tbody>
 </table>
@@ -15534,23 +15837,15 @@ Smoking and Alcohol Use             C04        16599
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looks like we have a lot to choose from. Additionally, it seems there is only one question per topic in this case. We find that this is actually the case for all classes. Meaning, each class holds multiple topics but each topic only contains one question to ask (and the topic/question are interchangeable for keys to a row). Even so, we still have tens of thousands of rows to look at, as seen on the right hand side. Lets fully print these topics/questions so we can see what's cut off:</p>
-
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[342]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[135]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_questions</span><span class="p">(</span><span class="n">health</span><span class="p">,</span> <span class="s2">&quot;Topic&quot;</span><span class="p">,</span> <span class="s2">&quot;Question&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_questions</span><span class="p">(</span><span class="n">cognition</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15572,30 +15867,10 @@ Smoking and Alcohol Use             C04        16599
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-bold">Topic: </span>Arthritis among older adults
-	<span class="ansi-bold">Question: </span>Percentage of older adults ever told they have arthritis
-<span class="ansi-bold">Topic: </span>Disability status, including sensory or mobility limitations
-	<span class="ansi-bold">Question: </span>Percentage of older adults who report having a disability (includes limitations related to sensory or mobility impairments or a physical, mental, or emotional condition)
-<span class="ansi-bold">Topic: </span>Fair or poor health among older adults with arthritis
-	<span class="ansi-bold">Question: </span>Fair or poor health among older adults with doctor-diagnosed arthritis
-<span class="ansi-bold">Topic: </span>Fall with injury within last year
-	<span class="ansi-bold">Question: </span>Percentage of older adults who have fallen and sustained an injury within last year
-<span class="ansi-bold">Topic: </span>Oral health:  tooth retention
-	<span class="ansi-bold">Question: </span>Percentage of older adults who report having lost 5 or fewer teeth due to decay or gum disease
-<span class="ansi-bold">Topic: </span>Physically unhealthy days (mean number of days)
-	<span class="ansi-bold">Question: </span>Physically unhealthy days (mean number of days in past month)
-<span class="ansi-bold">Topic: </span>Prevalence of sufficient sleep
-	<span class="ansi-bold">Question: </span>Percentage of older adults getting sufficient sleep (&gt;6 hours)
-<span class="ansi-bold">Topic: </span>Recent activity limitations in past month
-	<span class="ansi-bold">Question: </span>Mean number of days with activity limitations in the past month
-<span class="ansi-bold">Topic: </span>Self-rated health (fair to poor health)
-	<span class="ansi-bold">Question: </span>Percentage of older adults who self-reported that their health is &#34;fair&#34; or &#34;poor&#34;
-<span class="ansi-bold">Topic: </span>Self-rated health (good to excellent health)
-	<span class="ansi-bold">Question: </span>Percentage of older adults who self-reported that their health is &#34;good&#34;, &#34;very good&#34;, or &#34;excellent&#34;
-<span class="ansi-bold">Topic: </span>Severe joint pain among older adults with arthritis
-	<span class="ansi-bold">Question: </span>Severe joint pain due to arthritis among older adults with doctor-diagnosed arthritis
-<span class="ansi-bold">Topic: </span>Taking medication for high blood pressure
-	<span class="ansi-bold">Question: </span>Percentage of older adults who have been told they have high blood pressure who report currently taking medication for their high blood pressure
+<pre><span class="ansi-bold">Question 1: </span>Percentage of older adults who reported subjective cognitive decline or memory loss that interferes with their ability to engage in social activities or household chores
+<span class="ansi-bold">Question 2: </span>Percentage of older adults who reported subjective cognitive decline or memory loss that is happening more often or is getting worse in the preceding 12 months
+<span class="ansi-bold">Question 3: </span>Percentage of older adults who reported that as a result of subjective cognitive decline or memory loss that they need assistance with day-to-day activities
+<span class="ansi-bold">Question 4: </span>Percentage of older adults with subjective cognitive decline or memory loss who reported talking with a health care professional about it
 </pre>
 </div>
 </div>
@@ -15608,15 +15883,9 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looks like health deals</p>
-
-</div>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Classes hold multiple topics but each topic has only a single question associated with it; aka, we can access</p>
+<p><strong>For Question 1</strong>
+<br>
+Let's just look at the first question (% reporting memory loss that interferes with their life), for those in maryland, over 2015-2020, and sort by gender/ethnicity</p>
 
 </div>
 </div>
@@ -15625,10 +15894,13 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[253]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[120]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cognition</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;Percentage of older adults who reported subjective cognitive decline or memory loss that interferes with their ability to engage in social activities or household chores&quot;</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">cognition</span><span class="p">[(</span><span class="n">cognition</span><span class="p">[</span><span class="s2">&quot;TimePeriod&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Overall&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cognition</span><span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Maryland&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cognition</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">q</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">subset</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;StratCat2&quot;</span><span class="p">,</span> <span class="s2">&quot;StratValues2&quot;</span><span class="p">,</span> <span class="s2">&quot;StratValues1&quot;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">subset</span>
 </pre></div>
 
      </div>
@@ -15646,7 +15918,7 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[253]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[120]:</div>
 
 
 
@@ -15681,8 +15953,7 @@ Smoking and Alcohol Use             C04        16599
       <th>StratValues1</th>
       <th>StratCat2</th>
       <th>StratValues2</th>
-      <th>YearStart</th>
-      <th>YearEnd</th>
+      <th>TimePeriod</th>
       <th>StateAbbr</th>
       <th>State</th>
       <th>Location</th>
@@ -15690,104 +15961,441 @@ Smoking and Alcohol Use             C04        16599
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>1309</th>
       <td>Cognitive Decline</td>
       <td>Functional difficulties associated with subjec...</td>
       <td>Percentage of older adults who reported subjec...</td>
       <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>Race/Ethnicity</td>
-      <td>Asian/Pacific Islander</td>
-      <td>2020</td>
-      <td>2020</td>
-      <td>AK</td>
-      <td>Alaska</td>
-      <td>POINT (-147.722059 64.84507996)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Cognitive Decline</td>
-      <td>Functional difficulties associated with subjec...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>50-64 years</td>
-      <td>Race/Ethnicity</td>
-      <td>Hispanic</td>
-      <td>2020</td>
-      <td>2020</td>
-      <td>AZ</td>
-      <td>Arizona</td>
-      <td>POINT (-111.7638113 34.86597028)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Cognitive Decline</td>
-      <td>Functional difficulties associated with subjec...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>52.3</td>
-      <td>41.1</td>
-      <td>63.2</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>Race/Ethnicity</td>
-      <td>Black, non-Hispanic</td>
-      <td>2019</td>
-      <td>2019</td>
-      <td>AL</td>
-      <td>Alabama</td>
-      <td>POINT (-86.63186076 32.84057112)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Cognitive Decline</td>
-      <td>Functional difficulties associated with subjec...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>65.5</td>
-      <td>50.4</td>
-      <td>78.0</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>50-64 years</td>
-      <td>Race/Ethnicity</td>
-      <td>Black, non-Hispanic</td>
-      <td>2015</td>
-      <td>2015</td>
-      <td>AL</td>
-      <td>Alabama</td>
-      <td>POINT (-86.63186076 32.84057112)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Cognitive Decline</td>
-      <td>Functional difficulties associated with subjec...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>55.5</td>
-      <td>45.4</td>
-      <td>65.2</td>
+      <td>35.3</td>
+      <td>21.9</td>
+      <td>51.4</td>
       <td>&lt;NA&gt;</td>
       <td>Age Group</td>
       <td>50-64 years</td>
       <td>Gender</td>
       <td>Female</td>
-      <td>2019</td>
-      <td>2019</td>
-      <td>AL</td>
-      <td>Alabama</td>
-      <td>POINT (-86.63186076 32.84057112)</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1336</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>32.9</td>
+      <td>22.9</td>
+      <td>44.6</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Gender</td>
+      <td>Female</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1414</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>34.0</td>
+      <td>25.4</td>
+      <td>43.8</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Gender</td>
+      <td>Female</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1408</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>38.7</td>
+      <td>24.5</td>
+      <td>55.1</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>Gender</td>
+      <td>Male</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1275</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>17.6</td>
+      <td>9.8</td>
+      <td>29.6</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Gender</td>
+      <td>Male</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1352</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>27.8</td>
+      <td>19.5</td>
+      <td>37.9</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Gender</td>
+      <td>Male</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1260</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>No Data Available</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Race/Ethnicity</td>
+      <td>Asian/Pacific Islander</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1288</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>No Data Available</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Race/Ethnicity</td>
+      <td>Asian/Pacific Islander</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1287</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>Race/Ethnicity</td>
+      <td>Black, non-Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1311</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Race/Ethnicity</td>
+      <td>Black, non-Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1230</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>31.0</td>
+      <td>18.9</td>
+      <td>46.3</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Race/Ethnicity</td>
+      <td>Black, non-Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1266</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>No Data Available</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>Race/Ethnicity</td>
+      <td>Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1397</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Race/Ethnicity</td>
+      <td>Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1431</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Race/Ethnicity</td>
+      <td>Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1351</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>Race/Ethnicity</td>
+      <td>Native Am/Alaskan Native</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1329</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>No Data Available</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Race/Ethnicity</td>
+      <td>Native Am/Alaskan Native</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1296</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Sample size of denominator and/or age group fo...</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Race/Ethnicity</td>
+      <td>Native Am/Alaskan Native</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1247</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>37.3</td>
+      <td>25.0</td>
+      <td>51.5</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>Race/Ethnicity</td>
+      <td>White, non-Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1441</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>21.6</td>
+      <td>15.2</td>
+      <td>29.7</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Race/Ethnicity</td>
+      <td>White, non-Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1409</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>28.6</td>
+      <td>21.7</td>
+      <td>36.8</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Race/Ethnicity</td>
+      <td>White, non-Hispanic</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1294</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>36.8</td>
+      <td>26.8</td>
+      <td>48.2</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1377</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>25.8</td>
+      <td>19.0</td>
+      <td>34.1</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1235</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>31.1</td>
+      <td>25.0</td>
+      <td>38.1</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
     </tr>
   </tbody>
 </table>
@@ -15800,15 +16408,33 @@ Smoking and Alcohol Use             C04        16599
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now we've narrowed it down enough to see what's really going on. Looks like for each question, time period, and state, they record data for residents within that state and display it in multiplee ways, distinguishing between sexes and ethnicities, and then between age groups, including aggregated columns where "overall" appears in the Strat Value.</p>
+
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>For females</strong>
+<br>
+For example, this data just for females is shown below. We can see the difference in percentages (of people experiencing trouble from memory loss) between age groups 50-64 and 65+, where (interestingly), 65+ year old females in maryland from 2015-2020 answered yes <strong>32.9%</strong> of the time, lower than the 50-64 age group answering yes <strong>35.3%</strong> of the time. The data is also averaged over the two age groups to form a value of <strong>34.0%</strong> overall.</p>
+
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[303]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[126]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cognition</span><span class="p">[</span><span class="s2">&quot;Topic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subset</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1309</span><span class="p">,</span> <span class="mi">1336</span><span class="p">,</span> <span class="mi">1414</span><span class="p">]]</span>
 </pre></div>
 
      </div>
@@ -15826,17 +16452,108 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[303]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[126]:</div>
 
 
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Index([&#39;Subjective cognitive decline or memory loss among older adults&#39;,
-       &#39;Talked with health care professional about subjective cognitive decline or memory loss&#39;,
-       &#39;Functional difficulties associated with subjective cognitive decline or memory loss among older adults&#39;,
-       &#39;Need assistance with day-to-day activities because of subjective cognitive decline or memory loss&#39;],
-      dtype=&#39;string&#39;)</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class</th>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>LowConf</th>
+      <th>HighConf</th>
+      <th>Notes</th>
+      <th>StratCat1</th>
+      <th>StratValues1</th>
+      <th>StratCat2</th>
+      <th>StratValues2</th>
+      <th>TimePeriod</th>
+      <th>StateAbbr</th>
+      <th>State</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1309</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>35.3</td>
+      <td>21.9</td>
+      <td>51.4</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>Gender</td>
+      <td>Female</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1336</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>32.9</td>
+      <td>22.9</td>
+      <td>44.6</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>Gender</td>
+      <td>Female</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1414</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>34.0</td>
+      <td>25.4</td>
+      <td>43.8</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>Gender</td>
+      <td>Female</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -15845,6 +16562,169 @@ Smoking and Alcohol Use             C04        16599
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Across all sexes and ethnicities</strong>
+<br>
+Data is also combined for all sexes/ethnicities as displayed below, denoted by NaN values in the second stratification column, where the sex or ethnicity info would usually be. This is also split between the 50-64 year olds (<strong>36.8%</strong>) and 65+ year olds (<strong>25.8%</strong>), aggregated to a value of <strong>31.1%</strong> in total.</p>
+<blockquote><p>e.g. From 2015-2020, <strong>31.1%</strong> of Maryland participants reported 'yes' in response to 'do you have cognitive decline or memory loss that interferes with your ability to engage in social activities or household chores?'.</p>
+</blockquote>
+
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subset</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1294</span><span class="p">,</span> <span class="mi">1377</span><span class="p">,</span> <span class="mi">1235</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[128]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class</th>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>LowConf</th>
+      <th>HighConf</th>
+      <th>Notes</th>
+      <th>StratCat1</th>
+      <th>StratValues1</th>
+      <th>StratCat2</th>
+      <th>StratValues2</th>
+      <th>TimePeriod</th>
+      <th>StateAbbr</th>
+      <th>State</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1294</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>36.8</td>
+      <td>26.8</td>
+      <td>48.2</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>50-64 years</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1377</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>25.8</td>
+      <td>19.0</td>
+      <td>34.1</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>65 years or older</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+    <tr>
+      <th>1235</th>
+      <td>Cognitive Decline</td>
+      <td>Functional difficulties associated with subjec...</td>
+      <td>Percentage of older adults who reported subjec...</td>
+      <td>Percentage</td>
+      <td>31.1</td>
+      <td>25.0</td>
+      <td>38.1</td>
+      <td>&lt;NA&gt;</td>
+      <td>Age Group</td>
+      <td>Overall</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Overall</td>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>POINT (-76.60926011 39.29058096)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Looks like we have a lot to choose from. Additionally, it seems there is only one question per topic in this case. We find that this is actually the case for all classes. Meaning, each class holds multiple topics but each topic only contains one question to ask (and the topic/question are interchangeable for keys to a row). Even so, we still have tens of thousands of rows to look at, as seen on the right hand side. Lets fully print these topics/questions so we can see what's cut off:</p>
+
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="All-random-code-past-this-point">All random code past this point<a class="anchor-link" href="#All-random-code-past-this-point">&#182;</a></h2>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15892,465 +16772,6 @@ Smoking and Alcohol Use             C04        16599
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[231]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_questions</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Class&quot;</span><span class="p">,</span> <span class="s2">&quot;Topic&quot;</span><span class="p">,</span> <span class="s2">&quot;Question&quot;</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">question</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">by_questions</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">BOLD</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">question</span><span class="p">)</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-bold">(&#39;Caregiving&#39;, &#39;Duration of caregiving among older adults&#39;, &#39;Percentage of older adults who provided care to a friend or family member for six months or more&#39;)</span>
-         Class                                      Topic  \
-43  Caregiving  Duration of caregiving among older adults   
-
-                                             Question        Type  Value  \
-43  Percentage of older adults who provided care t...  Percentage   65.0   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1 StratCat2 StratValues2  \
-43     56.8      72.5  &lt;NA&gt;  Age Group      Overall    Gender         Male   
-
-    YearStart  YearEnd StateAbbr    State                          Location  
-43       2015     2020        AZ  Arizona  POINT (-111.7638113 34.86597028)  
-<span class="ansi-bold">(&#39;Cognitive Decline&#39;, &#39;Talked with health care professional about subjective cognitive decline or memory loss&#39;, &#39;Percentage of older adults with subjective cognitive decline or memory loss who reported talking with a health care professional about it&#39;)</span>
-                Class                                              Topic  \
-33  Cognitive Decline  Talked with health care professional about sub...   
-
-                                             Question        Type  Value  \
-33  Percentage of older adults with subjective cog...  Percentage    NaN   
-
-    LowConf  HighConf                                              Notes  \
-33      NaN       NaN  Sample size of denominator and/or age group fo...   
-
-    StratCat1       StratValues1       StratCat2              StratValues2  \
-33  Age Group  65 years or older  Race/Ethnicity  Native Am/Alaskan Native   
-
-    YearStart  YearEnd StateAbbr    State                          Location  
-33       2015     2020        AL  Alabama  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Mental Health&#39;, &#39;Frequent mental distress&#39;, &#39;Percentage of older adults who are experiencing frequent mental distress&#39;)</span>
-            Class                     Topic  \
-7   Mental Health  Frequent mental distress   
-11  Mental Health  Frequent mental distress   
-27  Mental Health  Frequent mental distress   
-28  Mental Health  Frequent mental distress   
-
-                                             Question        Type  Value  \
-7   Percentage of older adults who are experiencin...  Percentage    8.7   
-11  Percentage of older adults who are experiencin...  Percentage   10.7   
-27  Percentage of older adults who are experiencin...  Percentage   10.5   
-28  Percentage of older adults who are experiencin...  Percentage    6.2   
-
-    LowConf  HighConf Notes  StratCat1       StratValues1       StratCat2  \
-7       7.8       9.6  &lt;NA&gt;  Age Group            Overall             NaN   
-11      6.0      18.4  &lt;NA&gt;  Age Group            Overall  Race/Ethnicity   
-27      8.6      12.6  &lt;NA&gt;  Age Group            Overall          Gender   
-28      4.8       8.0  &lt;NA&gt;  Age Group  65 years or older             NaN   
-
-   StratValues2  YearStart  YearEnd StateAbbr    State  \
-7           NaN       2019     2019        IA     Iowa   
-11     Hispanic       2019     2019        KS   Kansas   
-27       Female       2019     2019        WY  Wyoming   
-28          NaN       2016     2016        WY  Wyoming   
-
-                            Location  
-7   POINT (-93.81649056 42.46940091)  
-11   POINT (-98.20078123 38.3477403)  
-27  POINT (-108.1098304 43.23554134)  
-28  POINT (-108.1098304 43.23554134)  
-<span class="ansi-bold">(&#39;Mental Health&#39;, &#39;Lifetime diagnosis of depression&#39;, &#39;Percentage of older adults with a lifetime diagnosis of depression&#39;)</span>
-            Class                             Topic  \
-1   Mental Health  Lifetime diagnosis of depression   
-4   Mental Health  Lifetime diagnosis of depression   
-12  Mental Health  Lifetime diagnosis of depression   
-14  Mental Health  Lifetime diagnosis of depression   
-19  Mental Health  Lifetime diagnosis of depression   
-24  Mental Health  Lifetime diagnosis of depression   
-
-                                             Question        Type  Value  \
-1   Percentage of older adults with a lifetime dia...  Percentage   24.0   
-4   Percentage of older adults with a lifetime dia...  Percentage   13.7   
-12  Percentage of older adults with a lifetime dia...  Percentage   19.8   
-14  Percentage of older adults with a lifetime dia...  Percentage   22.6   
-19  Percentage of older adults with a lifetime dia...  Percentage   26.2   
-24  Percentage of older adults with a lifetime dia...  Percentage   20.5   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1 StratCat2 StratValues2  \
-1      21.2      27.0  &lt;NA&gt;  Age Group  50-64 years       NaN          NaN   
-4      12.1      15.4  &lt;NA&gt;  Age Group      Overall    Gender         Male   
-12     19.0      20.7  &lt;NA&gt;  Age Group      Overall       NaN          NaN   
-14     20.3      25.2  &lt;NA&gt;  Age Group  50-64 years       NaN          NaN   
-19     25.2      27.3  &lt;NA&gt;  Age Group  50-64 years    Gender       Female   
-24     17.8      23.4  &lt;NA&gt;  Age Group      Overall    Gender       Female   
-
-    YearStart  YearEnd StateAbbr      State                          Location  
-1        2017     2017        ID      Idaho    POINT (-114.36373 43.68263001)  
-4        2020     2020        IN    Indiana  POINT (-86.14996019 39.76691045)  
-12       2017     2017        KS     Kansas   POINT (-98.20078123 38.3477403)  
-14       2015     2015        KY   Kentucky  POINT (-84.77497105 37.64597027)  
-19       2019     2019       MDW    Midwest                               NaN  
-24       2020     2020        WI  Wisconsin  POINT (-89.81637074 44.39319117)  
-<span class="ansi-bold">(&#39;Nutrition/Physical Activity/Obesity&#39;, &#39;Eating 2 or more fruits daily&#39;, &#39;Percentage of older adults who are eating 2 or more fruits daily&#39;)</span>
-                                  Class                          Topic  \
-47  Nutrition/Physical Activity/Obesity  Eating 2 or more fruits daily   
-
-                                             Question        Type  Value  \
-47  Percentage of older adults who are eating 2 or...  Percentage    NaN   
-
-    LowConf  HighConf                                              Notes  \
-47      NaN       NaN  Sample size of denominator and/or age group fo...   
-
-    StratCat1 StratValues1       StratCat2 StratValues2  YearStart  YearEnd  \
-47  Age Group  50-64 years  Race/Ethnicity     Hispanic       2017     2017   
-
-   StateAbbr    State                          Location  
-47        AL  Alabama  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Nutrition/Physical Activity/Obesity&#39;, &#39;No leisure-time physical activity within past month&#39;, &#39;Percentage of older adults who have not had any leisure time physical activity in the past month&#39;)</span>
-                                  Class  \
-40  Nutrition/Physical Activity/Obesity   
-
-                                                Topic  \
-40  No leisure-time physical activity within past ...   
-
-                                             Question        Type  Value  \
-40  Percentage of older adults who have not had an...  Percentage   25.4   
-
-    LowConf  HighConf Notes  StratCat1       StratValues1 StratCat2  \
-40     16.0      38.0  &lt;NA&gt;  Age Group  65 years or older    Gender   
-
-   StratValues2  YearStart  YearEnd StateAbbr   State  \
-40         Male       2016     2016        AK  Alaska   
-
-                           Location  
-40  POINT (-147.722059 64.84507996)  
-<span class="ansi-bold">(&#39;Nutrition/Physical Activity/Obesity&#39;, &#39;Obesity&#39;, &#39;Percentage of older adults who are currently obese, with a body mass index (BMI) of 30 or more&#39;)</span>
-                                  Class    Topic  \
-49  Nutrition/Physical Activity/Obesity  Obesity   
-
-                                             Question        Type  Value  \
-49  Percentage of older adults who are currently o...  Percentage    NaN   
-
-    LowConf  HighConf                                              Notes  \
-49      NaN       NaN  Sample size of denominator and/or age group fo...   
-
-    StratCat1       StratValues1       StratCat2 StratValues2  YearStart  \
-49  Age Group  65 years or older  Race/Ethnicity     Hispanic       2017   
-
-    YearEnd StateAbbr   State                         Location  
-49     2017        AK  Alaska  POINT (-147.722059 64.84507996)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Arthritis among older adults&#39;, &#39;Percentage of older adults ever told they have arthritis&#39;)</span>
-             Class                         Topic  \
-2   Overall Health  Arthritis among older adults   
-8   Overall Health  Arthritis among older adults   
-10  Overall Health  Arthritis among older adults   
-23  Overall Health  Arthritis among older adults   
-30  Overall Health  Arthritis among older adults   
-
-                                             Question        Type  Value  \
-2   Percentage of older adults ever told they have...  Percentage   35.7   
-8   Percentage of older adults ever told they have...  Percentage   20.5   
-10  Percentage of older adults ever told they have...  Percentage   47.9   
-23  Percentage of older adults ever told they have...  Percentage   41.9   
-30  Percentage of older adults ever told they have...  Percentage   45.1   
-
-    LowConf  HighConf Notes  StratCat1       StratValues1       StratCat2  \
-2      32.5      39.1  &lt;NA&gt;  Age Group        50-64 years             NaN   
-8      12.0      32.8  &lt;NA&gt;  Age Group        50-64 years  Race/Ethnicity   
-10     46.0      49.9  &lt;NA&gt;  Age Group  65 years or older             NaN   
-23     40.4      43.4  &lt;NA&gt;  Age Group            Overall  Race/Ethnicity   
-30     42.3      47.8  &lt;NA&gt;  Age Group        50-64 years             NaN   
-
-           StratValues2  YearStart  YearEnd StateAbbr    State  \
-2                   NaN       2017     2017        ID    Idaho   
-8              Hispanic       2019     2019        IA     Iowa   
-10                  NaN       2020     2020        KS   Kansas   
-23  White, non-Hispanic       2020     2020      WEST     West   
-30                  NaN       2017     2017        AL  Alabama   
-
-                            Location  
-2     POINT (-114.36373 43.68263001)  
-8   POINT (-93.81649056 42.46940091)  
-10   POINT (-98.20078123 38.3477403)  
-23                               NaN  
-30  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Disability status, including sensory or mobility limitations&#39;, &#39;Percentage of older adults who report having a disability (includes limitations related to sensory or mobility impairments or a physical, mental, or emotional condition)&#39;)</span>
-             Class                                              Topic  \
-34  Overall Health  Disability status, including sensory or mobili...   
-35  Overall Health  Disability status, including sensory or mobili...   
-
-                                             Question        Type  Value  \
-34  Percentage of older adults who report having a...  Percentage   44.0   
-35  Percentage of older adults who report having a...  Percentage   40.4   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1       StratCat2  \
-34     41.8      46.2  &lt;NA&gt;  Age Group      Overall  Race/Ethnicity   
-35     36.9      43.9  &lt;NA&gt;  Age Group      Overall          Gender   
-
-           StratValues2  YearStart  YearEnd StateAbbr    State  \
-34  White, non-Hispanic       2019     2019        AL  Alabama   
-35                 Male       2020     2020        AL  Alabama   
-
-                            Location  
-34  POINT (-86.63186076 32.84057112)  
-35  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Fair or poor health among older adults with arthritis&#39;, &#39;Fair or poor health among older adults with doctor-diagnosed arthritis&#39;)</span>
-             Class                                              Topic  \
-6   Overall Health  Fair or poor health among older adults with ar...   
-18  Overall Health  Fair or poor health among older adults with ar...   
-32  Overall Health  Fair or poor health among older adults with ar...   
-44  Overall Health  Fair or poor health among older adults with ar...   
-
-                                             Question        Type  Value  \
-6   Fair or poor health among older adults with do...  Percentage   26.1   
-18  Fair or poor health among older adults with do...  Percentage   24.6   
-32  Fair or poor health among older adults with do...  Percentage    NaN   
-44  Fair or poor health among older adults with do...  Percentage   54.0   
-
-    LowConf  HighConf                                              Notes  \
-6      24.0      28.3                                               &lt;NA&gt;   
-18     22.0      27.4                                               &lt;NA&gt;   
-32      NaN       NaN  Sample size of denominator and/or age group fo...   
-44     45.8      62.0                                               &lt;NA&gt;   
-
-    StratCat1       StratValues1       StratCat2              StratValues2  \
-6   Age Group            Overall             NaN                       NaN   
-18  Age Group            Overall          Gender                    Female   
-32  Age Group  65 years or older  Race/Ethnicity  Native Am/Alaskan Native   
-44  Age Group  65 years or older  Race/Ethnicity       Black, non-Hispanic   
-
-    YearStart  YearEnd StateAbbr    State                          Location  
-6        2020     2020        IA     Iowa  POINT (-93.81649056 42.46940091)  
-18       2020     2020        ME    Maine  POINT (-68.98503134 45.25422889)  
-32       2019     2019        AZ  Arizona  POINT (-111.7638113 34.86597028)  
-44       2015     2015        AL  Alabama  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Fall with injury within last year&#39;, &#39;Percentage of older adults who have fallen and sustained an injury within last year&#39;)</span>
-            Class                              Topic  \
-9  Overall Health  Fall with injury within last year   
-
-                                            Question        Type  Value  \
-9  Percentage of older adults who have fallen and...  Percentage    8.2   
-
-   LowConf  HighConf Notes  StratCat1       StratValues1 StratCat2  \
-9      7.1       9.4  &lt;NA&gt;  Age Group  65 years or older       NaN   
-
-  StratValues2  YearStart  YearEnd StateAbbr State  \
-9          NaN       2018     2018        IA  Iowa   
-
-                           Location  
-9  POINT (-93.81649056 42.46940091)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Physically unhealthy days (mean number of days)&#39;, &#39;Physically unhealthy days (mean number of days in past month)&#39;)</span>
-             Class                                            Topic  \
-3   Overall Health  Physically unhealthy days (mean number of days)   
-13  Overall Health  Physically unhealthy days (mean number of days)   
-17  Overall Health  Physically unhealthy days (mean number of days)   
-21  Overall Health  Physically unhealthy days (mean number of days)   
-25  Overall Health  Physically unhealthy days (mean number of days)   
-
-                                             Question  Type  Value  LowConf  \
-3   Physically unhealthy days (mean number of days...  Mean    4.8      4.0   
-13  Physically unhealthy days (mean number of days...  Mean    4.9      4.5   
-17  Physically unhealthy days (mean number of days...  Mean    3.7      3.4   
-21  Physically unhealthy days (mean number of days...  Mean    4.6      4.4   
-25  Physically unhealthy days (mean number of days...  Mean    5.2      4.6   
-
-    HighConf Notes  StratCat1 StratValues1 StratCat2 StratValues2  YearStart  \
-3        5.5  &lt;NA&gt;  Age Group  50-64 years       NaN          NaN       2018   
-13       5.3  &lt;NA&gt;  Age Group  50-64 years       NaN          NaN       2018   
-17       4.0  &lt;NA&gt;  Age Group      Overall       NaN          NaN       2020   
-21       4.8  &lt;NA&gt;  Age Group  50-64 years       NaN          NaN       2020   
-25       5.9  &lt;NA&gt;  Age Group  50-64 years       NaN          NaN       2016   
-
-    YearEnd StateAbbr      State                          Location  
-3      2018        ID      Idaho    POINT (-114.36373 43.68263001)  
-13     2018        KS     Kansas   POINT (-98.20078123 38.3477403)  
-17     2020        ME      Maine  POINT (-68.98503134 45.25422889)  
-21     2020       SOU      South                               NaN  
-25     2016        WI  Wisconsin  POINT (-89.81637074 44.39319117)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Prevalence of sufficient sleep&#39;, &#39;Percentage of older adults getting sufficient sleep (&gt;6 hours)&#39;)</span>
-             Class                           Topic  \
-5   Overall Health  Prevalence of sufficient sleep   
-29  Overall Health  Prevalence of sufficient sleep   
-
-                                             Question        Type  Value  \
-5   Percentage of older adults getting sufficient ...  Percentage   73.5   
-29  Percentage of older adults getting sufficient ...  Percentage   67.0   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1       StratCat2  \
-5      72.1      74.8  &lt;NA&gt;  Age Group      Overall             NaN   
-29     63.5      70.4  &lt;NA&gt;  Age Group  50-64 years  Race/Ethnicity   
-
-           StratValues2  YearStart  YearEnd StateAbbr    State  \
-5                   NaN       2020     2020        IA     Iowa   
-29  White, non-Hispanic       2016     2016        WY  Wyoming   
-
-                            Location  
-5   POINT (-93.81649056 42.46940091)  
-29  POINT (-108.1098304 43.23554134)  
-<span class="ansi-bold">(&#39;Overall Health&#39;, &#39;Recent activity limitations in past month&#39;, &#39;Mean number of days with activity limitations in the past month&#39;)</span>
-             Class                                      Topic  \
-15  Overall Health  Recent activity limitations in past month   
-16  Overall Health  Recent activity limitations in past month   
-26  Overall Health  Recent activity limitations in past month   
-36  Overall Health  Recent activity limitations in past month   
-41  Overall Health  Recent activity limitations in past month   
-45  Overall Health  Recent activity limitations in past month   
-
-                                             Question  Type  Value  LowConf  \
-15  Mean number of days with activity limitations ...  Mean    8.7      7.4   
-16  Mean number of days with activity limitations ...  Mean    8.1      7.3   
-26  Mean number of days with activity limitations ...  Mean    5.9      4.5   
-36  Mean number of days with activity limitations ...  Mean    5.8      3.9   
-41  Mean number of days with activity limitations ...  Mean    7.6      6.3   
-45  Mean number of days with activity limitations ...  Mean    5.5      4.9   
-
-    HighConf Notes  StratCat1       StratValues1       StratCat2 StratValues2  \
-15       9.9  &lt;NA&gt;  Age Group            Overall          Gender         Male   
-16       8.9  &lt;NA&gt;  Age Group        50-64 years             NaN          NaN   
-26       7.4  &lt;NA&gt;  Age Group        50-64 years          Gender         Male   
-36       7.6  &lt;NA&gt;  Age Group            Overall  Race/Ethnicity     Hispanic   
-41       9.0  &lt;NA&gt;  Age Group        50-64 years          Gender         Male   
-45       6.2  &lt;NA&gt;  Age Group  65 years or older             NaN          NaN   
-
-    YearStart  YearEnd StateAbbr      State                          Location  
-15       2017     2017        KY   Kentucky  POINT (-84.77497105 37.64597027)  
-16       2015     2015        KY   Kentucky  POINT (-84.77497105 37.64597027)  
-26       2017     2017        WI  Wisconsin  POINT (-89.81637074 44.39319117)  
-36       2018     2018        AZ    Arizona  POINT (-111.7638113 34.86597028)  
-41       2016     2016        AZ    Arizona  POINT (-111.7638113 34.86597028)  
-45       2019     2019        AZ    Arizona  POINT (-111.7638113 34.86597028)  
-<span class="ansi-bold">(&#39;Screenings and Vaccines&#39;, &#39;Diabetes screening within past 3 years&#39;, &#39;Percentage of older adults without diabetes who reported a blood sugar or diabetes test within 3 years&#39;)</span>
-                      Class                                   Topic  \
-31  Screenings and Vaccines  Diabetes screening within past 3 years   
-
-                                             Question        Type  Value  \
-31  Percentage of older adults without diabetes wh...  Percentage   68.5   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1 StratCat2 StratValues2  \
-31     65.0      71.7  &lt;NA&gt;  Age Group      Overall    Gender         Male   
-
-    YearStart  YearEnd StateAbbr    State                          Location  
-31       2017     2017        AL  Alabama  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Screenings and Vaccines&#39;, &#39;Ever had pneumococcal vaccine&#39;, &#39;Percentage of at risk adults (have diabetes, asthma, cardiovascular disease or currently smoke) who ever had a pneumococcal vaccine&#39;)</span>
-                      Class                          Topic  \
-37  Screenings and Vaccines  Ever had pneumococcal vaccine   
-39  Screenings and Vaccines  Ever had pneumococcal vaccine   
-48  Screenings and Vaccines  Ever had pneumococcal vaccine   
-
-                                             Question        Type  Value  \
-37  Percentage of at risk adults (have diabetes, a...  Percentage   48.1   
-39  Percentage of at risk adults (have diabetes, a...  Percentage   64.5   
-48  Percentage of at risk adults (have diabetes, a...  Percentage    NaN   
-
-    LowConf  HighConf                                              Notes  \
-37     36.7      59.7                                               &lt;NA&gt;   
-39     56.3      71.9                                               &lt;NA&gt;   
-48      NaN       NaN  Sample size of denominator and/or age group fo...   
-
-    StratCat1       StratValues1       StratCat2 StratValues2  YearStart  \
-37  Age Group        50-64 years          Gender         Male       2015   
-39  Age Group  65 years or older  Race/Ethnicity     Hispanic       2020   
-48  Age Group            Overall  Race/Ethnicity     Hispanic       2015   
-
-    YearEnd StateAbbr    State                          Location  
-37     2015        AK   Alaska   POINT (-147.722059 64.84507996)  
-39     2020        AZ  Arizona  POINT (-111.7638113 34.86597028)  
-48     2015        AL  Alabama  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Screenings and Vaccines&#39;, &#39;Influenza vaccine within past year&#39;, &#39;Percentage of older adults who reported influenza vaccine within the past year&#39;)</span>
-                      Class                               Topic  \
-38  Screenings and Vaccines  Influenza vaccine within past year   
-
-                                             Question        Type  Value  \
-38  Percentage of older adults who reported influe...  Percentage   40.3   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1       StratCat2  \
-38     31.4      50.0  &lt;NA&gt;  Age Group      Overall  Race/Ethnicity   
-
-                StratValues2  YearStart  YearEnd StateAbbr   State  \
-38  Native Am/Alaskan Native       2015     2015        AK  Alaska   
-
-                           Location  
-38  POINT (-147.722059 64.84507996)  
-<span class="ansi-bold">(&#39;Screenings and Vaccines&#39;, &#39;Pap test within past 3 years&#39;, &#39;Percentage of older adult women with an intact cervix who had a Pap test within the past 3 years&#39;)</span>
-                      Class                         Topic  \
-42  Screenings and Vaccines  Pap test within past 3 years   
-
-                                             Question        Type  Value  \
-42  Percentage of older adult women with an intact...  Percentage    NaN   
-
-    LowConf  HighConf                                              Notes  \
-42      NaN       NaN  Sample size of denominator and/or age group fo...   
-
-    StratCat1 StratValues1       StratCat2 StratValues2  YearStart  YearEnd  \
-42  Age Group      Overall  Race/Ethnicity     Hispanic       2016     2016   
-
-   StateAbbr    State                          Location  
-42        AL  Alabama  POINT (-86.63186076 32.84057112)  
-<span class="ansi-bold">(&#39;Screenings and Vaccines&#39;, &#39;Up-to-date with recommended vaccines and screenings - Men&#39;, &#39;Percentage of older adult men who are up to date with select clinical preventive services&#39;)</span>
-                      Class  \
-46  Screenings and Vaccines   
-
-                                                Topic  \
-46  Up-to-date with recommended vaccines and scree...   
-
-                                             Question        Type  Value  \
-46  Percentage of older adult men who are up to da...  Percentage   41.5   
-
-    LowConf  HighConf Notes  StratCat1       StratValues1       StratCat2  \
-46     34.3      49.1  &lt;NA&gt;  Age Group  65 years or older  Race/Ethnicity   
-
-           StratValues2  YearStart  YearEnd StateAbbr   State  \
-46  White, non-Hispanic       2016     2016        AK  Alaska   
-
-                           Location  
-46  POINT (-147.722059 64.84507996)  
-<span class="ansi-bold">(&#39;Smoking and Alcohol Use&#39;, &#39;Binge drinking within past 30 days&#39;, &#39;Percentage of older adults who reported binge drinking within the past 30 days&#39;)</span>
-                      Class                               Topic  \
-20  Smoking and Alcohol Use  Binge drinking within past 30 days   
-22  Smoking and Alcohol Use  Binge drinking within past 30 days   
-
-                                             Question        Type  Value  \
-20  Percentage of older adults who reported binge ...  Percentage    9.5   
-22  Percentage of older adults who reported binge ...  Percentage    9.0   
-
-    LowConf  HighConf Notes  StratCat1 StratValues1 StratCat2 StratValues2  \
-20      9.0      10.1  &lt;NA&gt;  Age Group      Overall       NaN          NaN   
-22      8.5       9.4  &lt;NA&gt;  Age Group      Overall       NaN          NaN   
-
-    YearStart  YearEnd StateAbbr      State Location  
-20       2020     2020       NRE  Northeast      NaN  
-22       2019     2019       SOU      South      NaN  
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[222]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
@@ -16385,348 +16806,6 @@ Need assistance with day-to-day activities because of subjective cognitive decli
 Functional difficulties associated with subjective cognitive decline or memory loss among older adults
 </pre>
 </div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[227]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cognition</span><span class="p">[</span><span class="n">cognition</span><span class="p">[</span><span class="s2">&quot;Topic&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">cog_topics</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[227]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Class</th>
-      <th>Topic</th>
-      <th>Question</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>LowConf</th>
-      <th>HighConf</th>
-      <th>Notes</th>
-      <th>StratCat1</th>
-      <th>StratValues1</th>
-      <th>StratCat2</th>
-      <th>StratValues2</th>
-      <th>YearStart</th>
-      <th>YearEnd</th>
-      <th>StateAbbr</th>
-      <th>State</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>176</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>65 years or older</td>
-      <td>Race/Ethnicity</td>
-      <td>Black, non-Hispanic</td>
-      <td>2020</td>
-      <td>2020</td>
-      <td>AK</td>
-      <td>Alaska</td>
-      <td>POINT (-147.722059 64.84507996)</td>
-    </tr>
-    <tr>
-      <th>206</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>11.3</td>
-      <td>6.9</td>
-      <td>18.0</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>Race/Ethnicity</td>
-      <td>Native Am/Alaskan Native</td>
-      <td>2015</td>
-      <td>2020</td>
-      <td>AZ</td>
-      <td>Arizona</td>
-      <td>POINT (-111.7638113 34.86597028)</td>
-    </tr>
-    <tr>
-      <th>211</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>Race/Ethnicity</td>
-      <td>Hispanic</td>
-      <td>2015</td>
-      <td>2015</td>
-      <td>AL</td>
-      <td>Alabama</td>
-      <td>POINT (-86.63186076 32.84057112)</td>
-    </tr>
-    <tr>
-      <th>215</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>65 years or older</td>
-      <td>Race/Ethnicity</td>
-      <td>Black, non-Hispanic</td>
-      <td>2020</td>
-      <td>2020</td>
-      <td>AZ</td>
-      <td>Arizona</td>
-      <td>POINT (-111.7638113 34.86597028)</td>
-    </tr>
-    <tr>
-      <th>257</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>17.4</td>
-      <td>13.4</td>
-      <td>22.4</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>Race/Ethnicity</td>
-      <td>Hispanic</td>
-      <td>2015</td>
-      <td>2015</td>
-      <td>AZ</td>
-      <td>Arizona</td>
-      <td>POINT (-111.7638113 34.86597028)</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>214146</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>50-64 years</td>
-      <td>Race/Ethnicity</td>
-      <td>Hispanic</td>
-      <td>2015</td>
-      <td>2020</td>
-      <td>WY</td>
-      <td>Wyoming</td>
-      <td>POINT (-108.1098304 43.23554134)</td>
-    </tr>
-    <tr>
-      <th>214228</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>11.0</td>
-      <td>9.6</td>
-      <td>12.5</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2015</td>
-      <td>2015</td>
-      <td>WY</td>
-      <td>Wyoming</td>
-      <td>POINT (-108.1098304 43.23554134)</td>
-    </tr>
-    <tr>
-      <th>214337</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>7.7</td>
-      <td>6.0</td>
-      <td>9.8</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>Overall</td>
-      <td>Gender</td>
-      <td>Male</td>
-      <td>2015</td>
-      <td>2020</td>
-      <td>WY</td>
-      <td>Wyoming</td>
-      <td>POINT (-108.1098304 43.23554134)</td>
-    </tr>
-    <tr>
-      <th>214342</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>9.6</td>
-      <td>7.9</td>
-      <td>11.6</td>
-      <td>&lt;NA&gt;</td>
-      <td>Age Group</td>
-      <td>65 years or older</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2015</td>
-      <td>2020</td>
-      <td>WY</td>
-      <td>Wyoming</td>
-      <td>POINT (-108.1098304 43.23554134)</td>
-    </tr>
-    <tr>
-      <th>214426</th>
-      <td>Cognitive Decline</td>
-      <td>Subjective cognitive decline or memory loss am...</td>
-      <td>Percentage of older adults who reported subjec...</td>
-      <td>Percentage</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sample size of denominator and/or age group fo...</td>
-      <td>Age Group</td>
-      <td>50-64 years</td>
-      <td>Race/Ethnicity</td>
-      <td>Asian/Pacific Islander</td>
-      <td>2015</td>
-      <td>2015</td>
-      <td>WY</td>
-      <td>Wyoming</td>
-      <td>POINT (-108.1098304 43.23554134)</td>
-    </tr>
-  </tbody>
-</table>
-<p>5088 rows × 17 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[225]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cog_topics</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[225]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>4700</pre>
-</div>
-
 </div>
 
 </div>
